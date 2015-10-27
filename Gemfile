@@ -24,13 +24,11 @@ gem 'coffee-rails', '~> 4.0.0'
 # gem 'therubyracer',  platforms: :ruby
 
 # Use jquery as the JavaScript library
-gem 'jquery-rails'
-# Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
-gem 'turbolinks'
+gem 'jquery-rails', '3.0.4'
+gem 'turbolinks', '1.1.1'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
-gem 'sdoc', '~> 0.4.0',          group: :doc
 
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 gem 'spring',        group: :development
@@ -47,4 +45,21 @@ gem 'bcrypt-ruby', '~> 3.1.0', require: 'bcrypt'
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+gem 'bootstrap-sass', '2.3.2.0'
+gem 'sprockets', '2.11.0'
+# has_secure_password用
+# テストデータ用
+gem 'faker', '1.1.2'
+# ページネーション用
+gem 'will_paginate', '3.0.4'
+gem 'bootstrap-will_paginate', '0.0.9'
 
+group :doc do
+  gem 'sdoc', '0.3.20', require: false
+end
+
+
+group :production do
+  gem 'pg', '0.15.1'
+  gem 'rails_12factor', '0.0.2'
+end
