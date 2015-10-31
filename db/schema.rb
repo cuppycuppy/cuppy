@@ -11,15 +11,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20151027125145) do
 
   create_table "cups", force: true do |t|
     t.string   "title"
     t.integer  "user_id"
+=======
+ActiveRecord::Schema.define(version: 20151013112835) do
+
+  create_table "recipe_photos", force: true do |t|
+    t.string   "title"
+    t.integer  "recipe_id"
+>>>>>>> scaffold
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
+<<<<<<< HEAD
   create_table "users", force: true do |t|
     t.string   "name"
     t.string   "email"
@@ -33,4 +42,12 @@ ActiveRecord::Schema.define(version: 20151027125145) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["remember_token"], name: "index_users_on_remember_token"
 
+=======
+  create_table "recipes", force: true do |t|
+    t.string   "title"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+>>>>>>> scaffold
 end
