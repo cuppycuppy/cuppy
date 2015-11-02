@@ -3,7 +3,7 @@ class UsersController < ApplicationController
   before_action :correct_user,   only: [:edit, :update] 
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
-  # GET /users
+  # GET /usersXXXXXXXXXXXXXXX
   # GET /users.json
   def index
     @users = User.all
