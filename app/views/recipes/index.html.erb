@@ -1,9 +1,9 @@
-<h1>Listing recipes</h1>
+<h1>Recipes list / Home</h1>
 
 <table>
   <thead>
     <tr>
-      <th>Title はるなが変更してみたよvol.2</th>
+      <th>Cuppy</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -17,6 +17,14 @@
         <td><%= link_to 'Destroy', recipe, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
+   
+    <% @situations.each do |situation| %>
+      <tr>
+        <td><%= link_to image_tag(situation.icon, :class => "icon"), situation_path(situation.id) %></td>
+      </tr>
+    <% end %>
+
+    <%= link_to 'Situations List', situations_path %>
   </tbody>
 </table>
 
