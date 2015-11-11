@@ -3,6 +3,12 @@
 <p>
   <strong>Title:</strong>
   <%= @recipe.title %>
+  <%= image_tag @recipe_photos.title, :class => "photo" %><br>
+  <%= @recipe.material %><br>
+  <strong>Step:</strong><br>
+  <% @steps.each do |step| %>
+    <%= step.step %><br>
+  <% end%>
 </p>
 
 <%= link_to 'Edit', edit_recipe_path(@recipe) %> |
