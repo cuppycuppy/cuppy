@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  resources :recipe_situations
+
+  resources :steps
+
+  resources :situations
+
   resources :cups
 
   resources :users
