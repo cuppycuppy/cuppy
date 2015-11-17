@@ -1,0 +1,27 @@
+<h1>Listing recipe_situations</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Recipe</th>
+      <th>Situation</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @recipe_situations.each do |recipe_situation| %>
+      <tr>
+        <td><%= recipe_situation.recipe_id %></td>
+        <td><%= recipe_situation.situation_id %></td>
+        <td><%= link_to 'Show', recipe_situation %></td>
+        <td><%= link_to 'Edit', edit_recipe_situation_path(recipe_situation) %></td>
+        <td><%= link_to 'Destroy', recipe_situation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Recipe situation', new_recipe_situation_path %>
