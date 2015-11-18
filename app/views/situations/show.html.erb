@@ -15,5 +15,11 @@
   <%= @situation.image %>
 </p>
 
+<% @recipes.each do |recipe| %>
+  <% arr = [] %>
+  <%arr =+ recipe.recipe_id %>
+  <%= arr %>
+<% end %>
+
 <%= link_to 'Edit', edit_situation_path(@situation) %> |
 <%= link_to 'Back', situations_path %>

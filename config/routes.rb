@@ -1,4 +1,4 @@
-Rails.application.routes.draw do
+Cuppy::Application.routes.draw do
   resources :recipe_situations
 
   resources :steps
