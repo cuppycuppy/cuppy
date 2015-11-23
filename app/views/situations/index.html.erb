@@ -26,4 +26,8 @@
 
 <br>
 
+<% @situations.each do |situation| %>
+  <%= link_to image_tag(situation.image, :class => "photo"), situation_path(situation.id) %>
+<% end %>
+
 <%= link_to 'New Situation', new_situation_path %>
