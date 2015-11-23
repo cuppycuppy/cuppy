@@ -1,0 +1,27 @@
+<h1>Listing user_situations</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Situation</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @user_situations.each do |user_situation| %>
+      <tr>
+        <td><%= user_situation.user_id %></td>
+        <td><%= user_situation.situation_id %></td>
+        <td><%= link_to 'Show', user_situation %></td>
+        <td><%= link_to 'Edit', edit_user_situation_path(user_situation) %></td>
+        <td><%= link_to 'Destroy', user_situation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New User situation', new_user_situation_path %>

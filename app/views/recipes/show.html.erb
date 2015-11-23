@@ -3,13 +3,21 @@
 <p>
   <strong>Title:</strong>
   <%= @recipe.title %><br>
+  
   <%= image_tag @recipe_photos.title, :class => "photo" %><br>
+   
   <%= @recipe.material %><br>
+  
   <strong>Step:</strong><br>
   <% @steps.each do |step| %>
     <%= step.step %><br>
   <% end%>
 </p>
+
+<strong>Situation:</strong>
+<% @situation.each do |situation| %>
+  <%= link_to situation.situation_id, situation_path(situation.situation_id) %>
+<% end %>
 
 <%= link_to 'Edit', edit_recipe_path(@recipe) %> |
 <%= link_to 'Back', recipes_path %>
