@@ -1,4 +1,6 @@
 Cuppy::Application.routes.draw do
+  resources :user_situations
+
   resources :recipe_situations
 
   resources :steps
