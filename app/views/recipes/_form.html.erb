@@ -22,5 +22,10 @@
    <div class="actions">
     <%= f.submit %>
    </div>
+   <li>
+      <span id="tweet_<%= tweet.id %>">
+         <%= render 'cookeds/cooked_btn', recipe: recipe %>
+      </span> 
+   </li>
 <% end %>
 

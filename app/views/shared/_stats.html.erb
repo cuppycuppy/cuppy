@@ -1,0 +1,9 @@
+<% @user ||= current_user %>
+<div class="stats">
+  <a href="<%= cooked_user_path(@user) %>">
+    <strong id="cookeds" class="stat">
+      <%= @user.cooked_recipes.count %>
+    </strong>
+    cookeds
+  </a>
+</div>
