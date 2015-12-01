@@ -11,7 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151124071737) do
+ActiveRecord::Schema.define(version: 20151201125038) do
+
+  create_table "cookeds", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "recipe_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "cups", force: true do |t|
     t.string   "title"
@@ -70,7 +77,6 @@ ActiveRecord::Schema.define(version: 20151124071737) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
-    t.string   "admin"
   end
 
   add_index "tests", ["email"], name: "index_tests_on_email", unique: true
@@ -91,7 +97,6 @@ ActiveRecord::Schema.define(version: 20151124071737) do
     t.datetime "updated_at"
     t.string   "remember_token"
     t.string   "password_digest"
-    t.string   "user"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
