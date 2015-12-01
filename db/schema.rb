@@ -11,6 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20151124071737) do
 
   create_table "cookeds", force: true do |t|
@@ -19,6 +20,9 @@ ActiveRecord::Schema.define(version: 20151124071737) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+=======
+ActiveRecord::Schema.define(version: 20151118090258) do
+>>>>>>> master
 
   create_table "cups", force: true do |t|
     t.string   "title"
@@ -45,6 +49,7 @@ ActiveRecord::Schema.define(version: 20151124071737) do
     t.string   "title"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "material"
   end
 
   create_table "situations", force: true do |t|
