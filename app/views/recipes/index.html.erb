@@ -3,7 +3,7 @@
 <table>
   <thead>
     <tr>
-      <th>Cuあppy</th>
+      <th>Cuppy</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -12,7 +12,6 @@
     <% @recipes.each do |recipe| %>
       <tr>
         <td><%= recipe.title %></td>
-        <%= render 'cookeds/cooked_btn', recipe: recipe %>
         <td><%= link_to 'Show', recipe %></td>
         <td><%= link_to 'Edit', edit_recipe_path(recipe) %></td>
         <td><%= link_to 'Destroy', recipe, method: :delete, data: { confirm: 'Are you sure?' } %></td>
