@@ -2,7 +2,7 @@ class CreateCookeds < ActiveRecord::Migration
   def change
     create_table :cookeds do |t|
       t.integer :user_id
-      t.integer :tweet_id
+      t.integer :recipe_id
 
       t.timestamps
     end
