@@ -21,6 +21,7 @@ class UsersController < ApplicationController
 
   # GET /users/1/edit
   def edit
+    @user = User.find(params[:id])
   end
 
   # POST /users
@@ -91,3 +92,10 @@ class UsersController < ApplicationController
       @user = User.find(params[:id])
       redirect_to(root_path) unless current_user?(@user)
     end
+
+    def cooked
+    @title = 'Cooked Recipes'
+    @tweet = current_user.recipes.build
+    @feed_recipes = current_user.favorite_recipes.paginate(page: params[:page])
+    render template: 'about/index'
+  end

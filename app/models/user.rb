@@ -5,6 +5,8 @@ class User < ActiveRecord::Base
   has_secure_password
   validates :password, length: { minimum: 6, message: '6文字以上としてください'  }
   has_many :cups
+  has_many :cookeds
+  has_many :cooked_recipes, through: :cookeds, source: :recipe
 end
 
   def User.new_remember_token
@@ -20,3 +22,15 @@ end
     def create_remember_token
       self.remember_token = User.encrypt(User.new_remember_token)
     end
+
+  def cooked?(recipe)
+    cookeds.find_by(recipe_id: recipe.id)
+  end
+
+  def cooked!(recipe)
+    cookeds.find_by(recipe_id: recipe.id)
+  end
+
+  def uncooked!(recipe)
+    cookeds.find_by(recipe_id: recipe.id).destroy
+  end

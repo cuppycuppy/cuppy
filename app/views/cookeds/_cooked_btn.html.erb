@@ -1,0 +1,5 @@
+<% if current_user.cooked?(recipe) %>
+    <%= render 'cookeds/destroy', recipe: recipe %>
+<% else %>
+    <%= render 'cookeds/create', recipe: recipe %>
+<% end %>
