@@ -6,6 +6,7 @@ gem 'rails', '4.1.8'
 
 group :development do
 gem 'rspec-rails', '3.3.3'
+gem 'better_errors'
 end
 
 group :test do
