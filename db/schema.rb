@@ -20,10 +20,6 @@ ActiveRecord::Schema.define(version: 20151201125038) do
     t.datetime "updated_at"
   end
 
-  add_index "cookeds", ["recipe_id"], name: "index_cookeds_on_recipe_id"
-  add_index "cookeds", ["user_id", "recipe_id"], name: "index_cookeds_on_user_id_and_recipe_id", unique: true
-  add_index "cookeds", ["user_id"], name: "index_cookeds_on_user_id"
-
   create_table "cups", force: true do |t|
     t.string   "title"
     t.integer  "user_id"
@@ -81,7 +77,6 @@ ActiveRecord::Schema.define(version: 20151201125038) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
-    t.string   "admin"
   end
 
   add_index "tests", ["email"], name: "index_tests_on_email", unique: true
@@ -102,7 +97,6 @@ ActiveRecord::Schema.define(version: 20151201125038) do
     t.datetime "updated_at"
     t.string   "remember_token"
     t.string   "password_digest"
-    t.string   "user"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
