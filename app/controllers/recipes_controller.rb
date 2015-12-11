@@ -11,8 +11,8 @@ class RecipesController < ApplicationController
   # GET /recipes/1
   # GET /recipes/1.json
   def show
-    @recipe_photos = RecipePhoto.find(params[:id])
-    @recipes = Recipe.find(params[:id])
+    @recipe_photo = RecipePhoto.find(params[:id])
+    @recipe = Recipe.find(params[:id])
     @steps = Step.where(recipe_id: params[:id])
     @situation = RecipeSituation.where(recipe_id: params[:id])
   end
@@ -74,6 +74,7 @@ class RecipesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def recipe_params
-      params.require(:recipe).permit(:title)
+      params.require(:recipe).permit(:title, :material)
     end
 end
+

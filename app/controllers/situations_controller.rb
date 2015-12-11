@@ -11,7 +11,7 @@ class SituationsController < ApplicationController
   # GET /situations/1.json
   def show
     @situation = Situation.find(params[:id])
-    @recipes = RecipeSituation.where(situation_id: params[:id])
+    @recipes = @situation.recipes
   end
 
   # GET /situations/new

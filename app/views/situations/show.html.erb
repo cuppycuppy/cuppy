@@ -18,9 +18,7 @@
 <%= image_tag @situation.image %>
 
 <% @recipes.each do |recipe| %>
-  <% arr = [] %>
-  <%arr =+ recipe.recipe_id %>
-  <%= arr %>
+  <%= recipe.title %>
 <% end %>
 
 <%= link_to 'Edit', edit_situation_path(@situation) %> |
