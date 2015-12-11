@@ -3,10 +3,9 @@
 <p>
   <strong>Title:</strong>
   <%= @recipe.title %><br>
-  
-  <%= image_tag @recipe_photos.title, :class => "photo" %><br>
-   
-  <%= @recipe.material %><br>
+  <%= image_tag @recipe_photo.title %><br>
+     
+  <%= br(@recipe.material) %><br>
   
   <strong>Step:</strong><br>
   <% @steps.each do |step| %>
