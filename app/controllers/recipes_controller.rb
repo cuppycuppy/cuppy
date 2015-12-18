@@ -14,7 +14,7 @@ class RecipesController < ApplicationController
     @recipe_photo = RecipePhoto.find(params[:id])
     @recipe = Recipe.find(params[:id])
     @steps = Step.where(recipe_id: params[:id])
-    @situation = RecipeSituation.where(recipe_id: params[:id])
+    @situations = @recipe.situations
   end
 
   # GET /recipes/new
