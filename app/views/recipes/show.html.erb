@@ -14,8 +14,8 @@
 </p>
 
 <strong>Situation:</strong>
-<% @situation.each do |situation| %>
-  <%= link_to situation.situation_id, situation_path(situation.situation_id) %>
+<% @situations.each do |situation| %>
+  <%= link_to situation.name, situation_path(situation.id) %>
 <% end %>
 
 <%= link_to 'Edit', edit_recipe_path(@recipe) %> |

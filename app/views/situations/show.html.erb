@@ -18,7 +18,7 @@
 <%= image_tag @situation.image %>
 
 <% @recipes.each do |recipe| %>
-  <%= recipe.title %>
+  <%= link_to recipe.title, recipe_path(recipe.id) %>
 <% end %>
 
 <%= link_to 'Edit', edit_situation_path(@situation) %> |
