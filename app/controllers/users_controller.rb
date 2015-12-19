@@ -31,7 +31,7 @@ class UsersController < ApplicationController
     if @user.save
       sign_in @user
       flash[:success] = "Welcome to Cuppy!"
-      redirect_to @user
+      redirect_to recipes_path
     else
       render 'new'
     end
