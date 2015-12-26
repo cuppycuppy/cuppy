@@ -1,4 +1,6 @@
 Cuppy::Application.routes.draw do
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
   devise_for :tests
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   resources :user_situations
