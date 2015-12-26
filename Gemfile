@@ -60,6 +60,7 @@ gem 'bootstrap-will_paginate', '0.0.9'
 gem 'rails_admin'
 gem 'devise'
 gem 'cancan'
+gem 'activeadmin', '~> 1.0.0.pre2'
 
 group :doc do
   gem 'sdoc', '0.3.20', require: false
