@@ -4,8 +4,16 @@ class RecipesController < ApplicationController
   # GET /recipes
   # GET /recipes.json
   def index
-    @recipes = Recipe.all
+    @all_recipes = Recipe.all
     @situations = Situation.all
+    @search = Recipe.search(params[:q])
+    #@search_results = @search.result
+    @recipes = @search.result
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @search_results }
+    end
   end
 
   # GET /recipes/1

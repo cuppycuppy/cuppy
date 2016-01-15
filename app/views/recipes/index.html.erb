@@ -1,4 +1,11 @@
 <h1>Recipes list / Home</h1>
+<%= search_form_for @search do |f| %>
+  <%= f.label :title_cont, 'タイトル' %>
+  <%= f.text_field :title_cont %>
+  <div>
+    <%= f.submit '検索する' %>
+  </div>
+<% end %>
 
 <table>
   <thead>
@@ -9,6 +16,8 @@
   </thead>
 
   <tbody>
+
+    <%# @all_recipes.each do |recipe| %>
     <% @recipes.each do |recipe| %>
       <tr>
         <td><%= recipe.title %></td>
