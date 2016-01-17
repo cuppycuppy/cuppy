@@ -62,6 +62,9 @@ gem 'devise'
 gem 'cancan'
 gem 'activeadmin', '~> 1.0.0.pre2'
 
+#検索バー
+gem 'ransack'
+
 group :doc do
   gem 'sdoc', '0.3.20', require: false
 end
