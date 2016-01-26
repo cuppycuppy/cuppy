@@ -1,0 +1,74 @@
+<h1>Home#index</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Cuppy</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+<!-- 時間によって変わる部分 -->
+<div class="right">
+  <div class="situationstitle">It's Saturday Morning!</div>
+  <div class="slider"> 
+    <% @situations.each do |situation| %>
+      <tr>
+        <td><%= link_to image_tag(situation.icon, :class => "icon"), situation_path(situation.id) %></td>
+      </tr>
+    <% end %>
+    <div><a href="situationtl.html"><img src="recovery.jpg"></a></div>
+    <div><a href="situationtl.html"><img src="saturday-morning.png"></a></div>
+    <div><a href="situationtl.html"><img src="vodka-party.png"></a></div>
+    <div><a href="situationtl.html"><img src="theme_top04.png"></a></div>
+  </div>
+
+<!-- シチュエーションの大テーマリスト -->
+<div id="big">
+  <p>大きなテーマからシチュエーションを探す</p>
+  <ul>
+    <li><a href="searchedsituation.html"><img src="お酒のあて.png" alt=""/></li></a>
+    <li><a href="searchedsituation.html"><img src="love.png" alt=""/></li></a>
+    <li><a href="searchedsituation.html"><img src="morning.png" alt=""/></li></a>
+    <li><a href="searchedsituation.html"><img src="party.png" alt=""/></li></a>
+    <li><a href="searchedsituation.html"><img src="アジア料理.png" alt=""/></li></a>
+    <li><a href="searchedsituation.html"><img src="お菓子.png" alt=""/></li></a>
+    <li><a href="searchedsituation.html"><img src="栄養満点.png" alt=""/></li></a>
+    <li><a href="searchedsituation.html"><img src="女子会.png" alt=""/></li></a>
+  </ul>
+</div>
+
+<!-- 検索バー -->
+<div class="searchbar">
+  フリーワードで検索する
+  <form method="get" action="#" class="search">
+    <div>
+      <input type="text" name="example" class="textBox">
+      <input type="submit" value="検索" class="btn">
+    </div>
+  </form>
+</div>
+
+<!-- 全てのシチュエーションリストへのリンク -->     
+<p class="text"><a href="Untitled-4.html">シチュエーションを全部みる></a></p>
+
+  </div>
+</div>
+
+<!-- サイドバー -->
+<div class="left">
+  <ul class='menu-wrapper'> 
+    <li class="menulist"><a href="toppage.html"><img src="IMG_4800.png" width="155" height="77" /></a></li>
+    <li class="menulist"><a href="toppage.html">Home</a></li>
+    <li class="menulist"><a href="/myaccount">My Cups</a></li>
+    <li class="menulist"><a href="situationlist.html">Situation list</a></li>
+    <li class="menulist"><a href="cuppy_login.html">Sign in</a></li>
+    <li class="menulist"><a href="cuppy_signup.html">Sign up</a></li>
+  </ul>
+</div>
+
+
+  </tbody>
+</table>
+
