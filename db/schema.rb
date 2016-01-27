@@ -11,7 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20160126125609) do
+=======
+ActiveRecord::Schema.define(version: 20160123071513) do
+>>>>>>> dd20e8428938882b27e831167a659b7c2e0a338b
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -46,16 +50,26 @@ ActiveRecord::Schema.define(version: 20160126125609) do
   add_index "admin_users", ["email"], name: "index_admin_users_on_email", unique: true
   add_index "admin_users", ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
 
+  create_table "categories", force: true do |t|
+    t.string   "title"
+    t.string   "image"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "category_situations", force: true do |t|
+    t.integer  "category"
+    t.integer  "situation_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "cookeds", force: true do |t|
     t.integer  "user_id"
     t.integer  "recipe_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-
-  add_index "cookeds", ["recipe_id"], name: "index_cookeds_on_recipe_id"
-  add_index "cookeds", ["user_id", "recipe_id"], name: "index_cookeds_on_user_id_and_recipe_id", unique: true
-  add_index "cookeds", ["user_id"], name: "index_cookeds_on_user_id"
 
   create_table "cups", force: true do |t|
     t.string   "title"
@@ -114,7 +128,6 @@ ActiveRecord::Schema.define(version: 20160126125609) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
-    t.string   "admin"
   end
 
   add_index "tests", ["email"], name: "index_tests_on_email", unique: true
@@ -142,7 +155,6 @@ ActiveRecord::Schema.define(version: 20160126125609) do
     t.datetime "updated_at"
     t.string   "remember_token"
     t.string   "password_digest"
-    t.string   "user"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

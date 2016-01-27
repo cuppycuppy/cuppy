@@ -1,5 +1,11 @@
 Cuppy::Application.routes.draw do
+<<<<<<< HEAD
   get 'home/index'
+=======
+  resources :category_situations
+
+  resources :categories
+>>>>>>> dd20e8428938882b27e831167a659b7c2e0a338b
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)

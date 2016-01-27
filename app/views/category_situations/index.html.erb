@@ -1,0 +1,27 @@
+<h1>Listing category_situations</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Category</th>
+      <th>Situation</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @category_situations.each do |category_situation| %>
+      <tr>
+        <td><%= category_situation.category %></td>
+        <td><%= category_situation.situation_id %></td>
+        <td><%= link_to 'Show', category_situation %></td>
+        <td><%= link_to 'Edit', edit_category_situation_path(category_situation) %></td>
+        <td><%= link_to 'Destroy', category_situation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Category situation', new_category_situation_path %>
