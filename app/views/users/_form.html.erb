@@ -29,16 +29,16 @@
 <div class='main'>
 
 <div class='login'>
-  <div id='login-wrapper'><h4 class='userregister'>Sign in</h4></div>
+  <div id='login-wrapper'><h4 class='userregister'>Sign up</h4></div>
      <form action="" method="post">
       <div class='form'>
-       <%= form_for(:session, url: sessions_path) do |f| %>
-      <div class="field">
-      <%= f.text_field :name, :placeholder  => "ユーザー名" %>
+      <%= f.text_field :name, :placeholder  => "ユーザーID"%>
       <%= f.text_field :email, :placeholder  => "メールアドレス"%>
       <%= f.password_field :password, :placeholder  => "パスワード"%>
     　<% end %>
       </div>
     <div class='registerbutton'><%= button_to '登録', recipes_path, :class => "button", :method => :get  %><br /></div>
     </form>  
+</div>
+
 </div>
