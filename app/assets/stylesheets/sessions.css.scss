@@ -1,3 +1,105 @@
-// Place all the styles related to the Sessions controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@charset "UTF-8";
+body{
+font-family: "Hiragino Kaku Gothic ProN"
+
+}
+
+li
+{
+  list-style: none;
+}
+
+
+
+/* サイドバー */
+.header_logo{
+ display: block;
+ margin-left: auto;
+ margin-right: auto;
+}
+
+
+.left{
+width: 15%;
+height: 500px;
+float: left;
+    position: fixed;
+}
+
+
+
+.left ul{
+list-style: none;
+}
+
+.menu-wrapper a:hover{
+color: #09C;
+text-decoration: none;
+border-bottom: 2px dotted #09C;
+}
+
+.menu-wrapper a {
+  margin-bottom: 1px;
+  padding: 5px 0 5px 10px;
+  display: block;
+  width: 126px;
+  text-decoration: none;
+  border-bottom: 2px dotted  #333;
+  color:  #333;
+}
+
+
+
+/*登録フォーム*/
+.login {
+width: 500px;
+padding: 10px 10px 25px 10px;
+background: #fff;
+border: 1px #ccc solid;
+box-shadow: 0 2px 3px 0 #ddd;
+-moz-box-shadow: 0 2px 3px 0 #ddd;
+-webkit-box-shadow: 0 2px 3px 0 #ddd;
+text-align: center;
+margin: 0 auto;
+}
+
+.userregister{
+color:#666;
+}
+
+.register_button:hover{
+ 	opacity: 0.5 ;
+filter: alpha(opacity=50) ;
+}
+
+.alreadyuser{
+margin: 0 auto;
+text-align: center;
+}
+
+
+
+.alreadyuser a{
+display: block;
+width: 200px;
+/*border-bottom: 1px dotted #09C;*/
+text-decoration: none;
+color: #09C;
+margin: 0px auto;
+font-size: 14px;
+text-align: center;
+padding:10px 0px 0px 0px;
+}
+
+.alreadyuser a:hover{
+display: block;
+width: 200px;
+/*border-bottom: 1px dotted #06F;*/
+text-decoration: none;
+color: #06F;
+margin: 0px auto;
+font-size: 14px;
+text-align: center;
+padding:10px 0px 0px 0px;
+}

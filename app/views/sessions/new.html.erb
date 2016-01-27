@@ -1,27 +1,5 @@
 
 
-<% provide(:title, "Sign in") %>
-<h1>Sign in</h1>
-
-<div class="row">
-  <div class="span6 offset3">
-    <%= form_for(:session, url: sessions_path) do |f| %>
-
-      <%= f.label :email %>
-      <%= f.text_field :email %>
-
-      <%= f.label :password %>
-      <%= f.password_field :password %>
-      <%= button_to 'Signin', recipes_path, :class => "button", :method => :get  %><br />
-    <% end %>
-
-    <p>New user? <%= link_to "Sign up now!", signup_path %></p>
-  </div>
-</div>
-
-
-
-
 <!-- サイドバー -->
 <div class="left">
         <ul class='menu-wrapper'> 
@@ -34,7 +12,6 @@
 </div>
 
 
-
 <!-- 登録フォーム -->
 
 <div class='main'>
@@ -43,13 +20,14 @@
   <div id='login-wrapper'><h4 class='userregister'>Sign in</h4></div>
      <form action="" method="post">
       <div class='form'>
-      <input type="text" id="customer_email" name="customer[email]" required="required" class="custom-field" placeholder="メールアドレス" />
-      <input type="password" id="customer_password" name="customer[password]" required="required" class="custom-field" placeholder="パスワード" />
-      <p></p>
+       <%= form_for(:session, url: sessions_path) do |f| %>
+
+      <%= f.text_field :email, :placeholder  => "メールアドレス"%>
+      <%= f.password_field :password, :placeholder  => "パスワード"%>
+    　<% end %>
       </div>
-    <div class='registerbutton'><input type="image" src="cuppy_register_button.png" alt="登録"></div>
+    <div class='registerbutton'><%= button_to '登録', recipes_path, :class => "button", :method => :get  %><br /></div>
     </form>  
 </div>
 
-<div class='alreadyuser'><a href="/ddk">新規会員登録はこちら</a></div>
 
