@@ -2,9 +2,10 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.photo{
-  width: 400px;
-  height: 300px;
+.recipe_photo{
+  width: 200px;
+  height: 100px;
+  padding: 20px;
 }
 
 .textfield-size{
@@ -16,3 +17,11 @@
   width: 150px;
   height: 200px;
 }
+
+/* サーチバー */
+
+.searchbar{
+  margin-left:140px;
+  margin-top:30px;
+}
+

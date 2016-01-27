@@ -1,42 +1,34 @@
-<h1>Recipes list / Home</h1>
+<!-- サイドバー -->
+<div class="left">
+  <ul class='menu-wrapper'>
+    <li class="menulist"><%= link_to image_tag("cuppylogo_font.png", :width => "155", :height => "77"), home_index_path %></li>
+    <li class="menulist"><%= link_to "HOME", home_index_path %></li> 
+    <li class="menulist"><%= link_to "My Cups", users_path %></li>
+    <li class="menulist"><%= link_to "Situation list", situations_path %></li>
+    <li class="menulist"><%= link_to "Sign in", signin_path %></li>
+    <li class="menulist"><%= link_to "Sign up", signup_path %></li>
+  </ul>
+</div>
+
+<div class="right">
+<!-- 検索バー -->
+<div class="searchbar">
+  フリーワードで検索する
 <%= search_form_for @search do |f| %>
-  <%= f.label :title_cont, 'タイトル' %>
-  <%= f.text_field :title_cont %>
-  <div>
-    <%= f.submit '検索する' %>
-  </div>
-<% end %>
+  <%#= f.label :title_cont %>
+  <%= f.text_field :title_cont, :class => "textBox" %>
+    <%= f.submit '検索', :class => "btn" %>
+  <% end %>
+</div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Cuppy</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-
-    <%# @all_recipes.each do |recipe| %>
-    <% @recipes.each do |recipe| %>
-      <tr>
-        <td><%= recipe.title %></td>
-        <td><%= link_to 'Show', recipe %></td>
-        <td><%= link_to 'Edit', edit_recipe_path(recipe) %></td>
-        <td><%= link_to 'Destroy', recipe, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
+<ul>
+  <% @recipe_photos.each do |recipe_photo| %>
+  <li><%= link_to image_tag(recipe_photo.title, :width => "200px", :height => "200px", :padding => "10px"), recipe_path(recipe_photo.id) %></li>
+  <% end %>
+</ul>
    
-    <% @situations.each do |situation| %>
-      <tr>
-        <td><%= link_to image_tag(situation.icon, :class => "icon"), situation_path(situation.id) %></td>
-      </tr>
-    <% end %>
-
-    <%= link_to 'Situations List', situations_path %>
-  </tbody>
-</table>
-
 <br>
 
 <%= link_to 'New Recipe', new_recipe_path %>
+
+</div>

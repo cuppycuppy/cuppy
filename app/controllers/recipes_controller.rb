@@ -9,6 +9,7 @@ class RecipesController < ApplicationController
     @search = Recipe.search(params[:q])
     #@search_results = @search.result
     @recipes = @search.result
+    @recipe_photos = RecipePhoto.all
 
     respond_to do |format|
       format.html # index.html.erb
