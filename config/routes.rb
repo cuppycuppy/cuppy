@@ -1,4 +1,8 @@
 Cuppy::Application.routes.draw do
+  resources :category_situations
+
+  resources :categories
+
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   devise_for :tests
