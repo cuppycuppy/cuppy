@@ -1,17 +1,3 @@
-<h1>Home#index</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Cuppy</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-  </tbody>
-
-</table>
 
 <!-- 時間によって変わる部分 -->
 <div class="right">
@@ -27,7 +13,7 @@
   <p>大きなテーマからシチュエーションを探す</p>
   <ul>
     <% @categories.each do |category| %>
-      <li><%= image_tag(category.image) %>
+      <li><%= link_to image_tag(category.image), category_path(category.id) %>
     <% end %>
   </ul>
 </div>
@@ -35,29 +21,27 @@
 <!-- 検索バー -->
 <div class="searchbar">
   フリーワードで検索する
-  <form method="get" action="#" class="search">
-    <div>
-      <input type="text" name="example" class="textBox">
-      <input type="submit" value="検索" class="btn">
-    </div>
-  </form>
+<%= search_form_for @search do |f| %>
+  <%#= f.label :title_cont %>
+  <%= f.text_field :title_cont, :class => "textBox" %>
+    <%= f.submit '検索', :class => "btn" %>
+  <% end %>
 </div>
 
 <!-- 全てのシチュエーションリストへのリンク -->     
-<p class="text"><a href="Untitled-4.html">シチュエーションを全部みる></a></p>
-
+<p class="text"><%= link_to 'シチュエーションを全部見る>', situations_path %></p> 
   </div>
 </div>
 
 <!-- サイドバー -->
 <div class="left">
   <ul class='menu-wrapper'> 
-    <li class="menulist"><a href="toppage.html"><img src="/assets/cuppylogo_font.png" width="155" height="77" /></a></li>
-    <li class="menulist"><a href="toppage.html">Home</a></li>
-    <li class="menulist"><a href="/myaccount">My Cups</a></li>
-    <li class="menulist"><a href="situationlist.html">Situation list</a></li>
-    <li class="menulist"><a href="cuppy_login.html">Sign in</a></li>
-    <li class="menulist"><a href="cuppy_signup.html">Sign up</a></li>
+    <li class="menulist"><%= link_to image_tag("cuppylogo_font.png", :width => "155", :height => "77"), home_index_path %></li>
+    <li class="menulist"><%= link_to "HOME", home_index_path %></li>
+    <li class="menulist"><%= link_to "My Cups", users_path %></li>
+    <li class="menulist"><%= link_to "Situation list", situations_path %></li>
+    <li class="menulist"><%= link_to "Sign in", signin_path %></li>
+    <li class="menulist"><%= link_to "Sign up", signup_path %></li>
   </ul>
 </div>
 
