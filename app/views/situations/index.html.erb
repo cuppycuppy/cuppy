@@ -1,33 +1,25 @@
-<h1>Listing situations</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Icon</th>
-      <th>Image</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<!-- サイドバー -->  
 
-  <tbody>
-    <% @situations.each do |situation| %>
-      <tr>
-        <td><%= situation.name %></td>
-        <td><%= situation.icon %></td>
-        <td><%= situation.image %></td>
-        <td><%= link_to 'Show', situation %></td>
-        <td><%= link_to 'Edit', edit_situation_path(situation) %></td>
-        <td><%= link_to 'Destroy', situation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<div class="left">
+  <ul class='menu-wrapper'> 
+    <li class="menulist"><%= link_to image_tag("cuppylogo_font.png", :width => "155", :height => "77"), home_index_path %></li>
+    <li class="menulist"><%= link_to "HOME", home_index_path %></li>
+    <li class="menulist"><%= link_to "My Cups", users_path %></li>
+    <li class="menulist"><%= link_to "Situation list", situations_path %></li>
+    <li class="menulist"><%= link_to "Sign in", signin_path %></li>
+    <li class="menulist"><%= link_to "Sign up", signup_path %></li>
+  </ul>
+</div>
 
-<br>
+<!-- シチュエーションのイラストリスト -->  
 
-<% @situations.each do |situation| %>
-  <%= link_to image_tag(situation.image, :class => "photo"), situation_path(situation.id) %>
-<% end %>
+<div id="themelist">
+  <ul>
+  <% @situations.each do |situation| %> 
+    <li><%= link_to image_tag(situation.image), situation_path(situation.id) %></li>
+  <% end %>
+  </ul>
+</div>
 
 <%= link_to 'New Situation', new_situation_path %>
