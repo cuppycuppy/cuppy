@@ -9,19 +9,17 @@
   </thead>
 
   <tbody>
+  </tbody>
+
+</table>
+
 <!-- 時間によって変わる部分 -->
 <div class="right">
   <div class="situationstitle">It's Saturday Morning!</div>
   <div class="slider"> 
     <% @situations.each do |situation| %>
-      <tr>
-        <td><%= link_to image_tag(situation.icon, :class => "icon"), situation_path(situation.id) %></td>
-      </tr>
+      <%= link_to image_tag(situation.image, :class => "photo"), situation_path(situation.id) %>
     <% end %>
-    <div><a href="situationtl.html"><img src="recovery.jpg"></a></div>
-    <div><a href="situationtl.html"><img src="saturday-morning.png"></a></div>
-    <div><a href="situationtl.html"><img src="vodka-party.png"></a></div>
-    <div><a href="situationtl.html"><img src="theme_top04.png"></a></div>
   </div>
 
 <!-- シチュエーションの大テーマリスト -->
@@ -67,8 +65,4 @@
     <li class="menulist"><a href="cuppy_signup.html">Sign up</a></li>
   </ul>
 </div>
-
-
-  </tbody>
-</table>
 
