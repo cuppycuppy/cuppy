@@ -26,14 +26,9 @@
 <div id="big">
   <p>大きなテーマからシチュエーションを探す</p>
   <ul>
-    <li><a href="searchedsituation.html"><img src="お酒のあて.png" alt=""/></li></a>
-    <li><a href="searchedsituation.html"><img src="love.png" alt=""/></li></a>
-    <li><a href="searchedsituation.html"><img src="morning.png" alt=""/></li></a>
-    <li><a href="searchedsituation.html"><img src="party.png" alt=""/></li></a>
-    <li><a href="searchedsituation.html"><img src="アジア料理.png" alt=""/></li></a>
-    <li><a href="searchedsituation.html"><img src="お菓子.png" alt=""/></li></a>
-    <li><a href="searchedsituation.html"><img src="栄養満点.png" alt=""/></li></a>
-    <li><a href="searchedsituation.html"><img src="女子会.png" alt=""/></li></a>
+    <% @categories.each do |category| %>
+      <li><%= image_tag(category.image) %>
+    <% end %>
   </ul>
 </div>
 
@@ -57,7 +52,7 @@
 <!-- サイドバー -->
 <div class="left">
   <ul class='menu-wrapper'> 
-    <li class="menulist"><a href="toppage.html"><img src="IMG_4800.png" width="155" height="77" /></a></li>
+    <li class="menulist"><a href="toppage.html"><img src="/assets/cuppylogo_font.png" width="155" height="77" /></a></li>
     <li class="menulist"><a href="toppage.html">Home</a></li>
     <li class="menulist"><a href="/myaccount">My Cups</a></li>
     <li class="menulist"><a href="situationlist.html">Situation list</a></li>

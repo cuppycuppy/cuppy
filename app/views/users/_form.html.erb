@@ -11,19 +11,34 @@
     </div>
   <% end %>
 
-            <div class="field">
-              <%= f.label :name, "ユーザー名" %><br>
-              <%= f.text_field :name %>
-            </div>
-            <div class="field">
-              <%= f.label :email, "メールアドレス" %><br>
-              <%= f.text_field :email %>
-            </div>
-            <div class="field">
-              <%= f.label :password, "パスワード" %><br>
-              <%= f.password_field :password %>
-            </div>
-            <div class="actions">
-              <%= f.submit %>
-            </div>
-          <% end %>
+
+<!-- サイドバー -->
+<div class="left">
+        <ul class='menu-wrapper'> 
+          <li class="menulist"> <img src="IMG_4800.png" width="155" height="77" /></li> 
+          <li class="menulist">   <a href="/myaccount">Home</a></li>
+        <li class="menulist"><a href="/myaccount">My Cups</a></li>
+        <li class="menulist"><a href="/home">Situation list</a></li>
+        <li class="menulist">   <a href="/myaccount">Sign in</a></li>
+        <li class="menulist">   <a href="/myaccount">Sign up</a></li>
+</div>
+
+
+<!-- 登録フォーム -->
+
+<div class='main'>
+
+<div class='login'>
+  <div id='login-wrapper'><h4 class='userregister'>Sign in</h4></div>
+     <form action="" method="post">
+      <div class='form'>
+       <%= form_for(:session, url: sessions_path) do |f| %>
+      <div class="field">
+      <%= f.text_field :name, :placeholder  => "ユーザー名" %>
+      <%= f.text_field :email, :placeholder  => "メールアドレス"%>
+      <%= f.password_field :password, :placeholder  => "パスワード"%>
+    　<% end %>
+      </div>
+    <div class='registerbutton'><%= button_to '登録', recipes_path, :class => "button", :method => :get  %><br /></div>
+    </form>  
+</div>
