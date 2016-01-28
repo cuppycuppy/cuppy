@@ -11,6 +11,7 @@
      <li class="menulist"><%= link_to "Log out", signout_path,method: :delete %></li>
       </div>
 
+
 <%= form_for(@user_situation) do |f| %>
   <% if @user_situation.errors.any? %>
     <div id="error_explanation">

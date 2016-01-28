@@ -1,5 +1,7 @@
 Cuppy::Application.routes.draw do
 
+  resources :cup_recipes
+
   get 'home/index'
 
   resources :category_situations
