@@ -1,22 +1,43 @@
-<p id="notice"><%= notice %></p>
+<!-- サイドバー -->
+<div class="left">
+  <ul class='menu-wrapper'> 
+    <li class="menulist"><%= link_to image_tag("cuppylogo_font.png", :width => "155", :height => "77"), home_index_path %></li>
+    <li class="menulist"><%= link_to "HOME", home_index_path %></li>
+    <li class="menulist"><%= link_to "My Cups", users_path %></li>
+    <li class="menulist"><%= link_to "Situation list", situations_path %></li>
+    <li class="menulist"><%= link_to "Log in", signin_path %></li>
+    <li class="menulist"><%= link_to "Log out", signout_path,method: :delete %></li>
+  </ul>
+</div>
+
+<div class="right">
+<div class="contents">
+  <!--背景画像-->
+  <div class="background"><img src="/assets/recipe_background02.png" /></div>
+  <!-- レシピ中身 -->
+  <div class="recipetitle">
+    <%= @recipe.title %>
+  </div>
+  <p class="recipepic"><%= image_tag(@recipe_photo.title) %></p>
+  <div class="ingredient">
+    <div class="ingredient_title">材料</div>
+    <ul class="ingredient_content">
+      <li><%= br(@recipe.material) %></li>
+    </ul>
+  </div>
+
+  <ul class="procedure">
+    <% @steps.each do |step| %>
+      <li><%= step.order %>. <%= step.step %><br></li>
+    <% end %>
+  </ul>
+
+</div>
 
 <p>
-  <strong>Title:</strong>
-  <%= @recipe.title %><br>
-  <%= image_tag @recipe_photo.title %><br>
-     
-  <%= br(@recipe.material) %><br>
-  
-  <strong>Step:</strong><br>
-  <% @steps.each do |step| %>
-    <%= step.step %><br>
-  <% end%>
-</p>
-
 <strong>Situation:</strong>
 <% @situations.each do |situation| %>
   <%= link_to situation.name, situation_path(situation.id) %>
 <% end %>
+</p>
 
-<%= link_to 'Edit', edit_recipe_path(@recipe) %> |
-<%= link_to 'Back', recipes_path %>

@@ -2,6 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+//recipe一覧ページ
 .recipe_photo{
   width: 200px;
   height: 100px;
@@ -23,5 +24,89 @@
 .searchbar{
   margin-left:140px;
   margin-top:30px;
+}
+
+
+
+//recipe個別ページ
+li{
+  list-style: none;
+  border-bottom:#ccc 1px dashed;
+}
+
+.content{
+  position: relative;
+}
+        
+.background{
+  position: absolute;
+  top: 0px;
+  left: 200px;
+}
+
+.background img{
+  width: 900px;
+}
+
+.recipetitle{
+  position: absolute;
+  top: 50px;
+  left: 420px;
+  width: 500px;
+  height: 30px;
+  padding: 10px;
+  color: #369;
+  font-size:25px;
+}
+
+.recipepic img{
+  position: absolute;
+  top: 120px;
+  left: 500px;
+  width: 300px;
+ }
+
+.ingredient_title{
+  position: absolute;
+  top: 540px;
+  left: 430px;
+  width: 500px;
+}
+
+.ingredient_content {
+  position: absolute;
+  top: 560px;
+  left: 380px;
+  height:200px;
+}
+
+ul.procedure {
+  position: absolute;
+  top: 660px;
+  left: 380px;
+  height: auto;
+}
+
+.left{
+  width: 15%;
+  height: 500px;
+  float: left;
+  position: fixed;  
+}
+
+.menu-wrapper a:hover{
+  color: #09C;
+  text-decoration: none;
+  border-bottom: 2px dotted #09C;
+}
+
+.menu-wrapper a {
+  margin-bottom: 1px;
+  padding: 5px 0 5px 10px;
+  display: block;
+  width: 126px;
+  text-decoration: none;
+  border-bottom: 2px dotted  #333;
+  color:  #333;
 }
 
