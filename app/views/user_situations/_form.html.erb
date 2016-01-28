@@ -1,3 +1,16 @@
+<!-- サイドバー -->
+<div class="left">
+  <ul class='menu-wrapper'> 
+    <li class="menulist"><%= link_to image_tag("cuppylogo_font.png", :width => "155", :height => "77"), home_index_path %></li>
+    <li class="menulist"><%= link_to "HOME", home_index_path %></li>
+    <li class="menulist"><%= link_to "My Cups", users_path %></li>
+    <li class="menulist"><%= link_to "Situation list", situations_path %></li>
+    <li class="menulist"><%= link_to "Log in", signin_path %></li>
+    <li class="menulist"><%= link_to "Log out", signout_path,method: :delete %></li>
+  </ul>
+</div>
+
+
 <%= form_for(@user_situation) do |f| %>
   <% if @user_situation.errors.any? %>
     <div id="error_explanation">

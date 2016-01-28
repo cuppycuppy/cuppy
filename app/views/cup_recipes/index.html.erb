@@ -1,0 +1,27 @@
+<h1>Listing cup_recipes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Cup</th>
+      <th>Recipe</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @cup_recipes.each do |cup_recipe| %>
+      <tr>
+        <td><%= cup_recipe.cup_id %></td>
+        <td><%= cup_recipe.recipe_id %></td>
+        <td><%= link_to 'Show', cup_recipe %></td>
+        <td><%= link_to 'Edit', edit_cup_recipe_path(cup_recipe) %></td>
+        <td><%= link_to 'Destroy', cup_recipe, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Cup recipe', new_cup_recipe_path %>

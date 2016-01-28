@@ -1,0 +1,2 @@
+module CupRecipesHelper
+end
