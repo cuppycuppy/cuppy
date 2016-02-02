@@ -1,30 +1,11 @@
-<p id="notice"><%= notice %></p>
-
 <p>
   <strong>Name:</strong>
   <%= @user.name %>
 </p>
 
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p>
-
-<p>
-  <strong>Password:</strong>
-  <%= @user.password %>
-</p>
-
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
-
-<h2>Situations</h2>
-
-
-<h2>Cups </h2>
+<h2>My Cups </h2>
 <% @user.cups.each do |cup| %>
     <div>
-        <%= cup.title %>
+        <%= link_to cup.title, cup_path(cup.id) %>
     </div>
-    <hr>
 <% end %>
