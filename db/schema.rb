@@ -67,6 +67,10 @@ ActiveRecord::Schema.define(version: 20160128051154) do
     t.datetime "updated_at"
   end
 
+  add_index "cookeds", ["recipe_id"], name: "index_cookeds_on_recipe_id"
+  add_index "cookeds", ["user_id", "recipe_id"], name: "index_cookeds_on_user_id_and_recipe_id", unique: true
+  add_index "cookeds", ["user_id"], name: "index_cookeds_on_user_id"
+
   create_table "cup_recipes", force: true do |t|
     t.integer  "cup_id"
     t.integer  "recipe_id"
@@ -100,6 +104,7 @@ ActiveRecord::Schema.define(version: 20160128051154) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.text     "material"
+    t.string   "image"
   end
 
   create_table "situations", force: true do |t|
@@ -131,10 +136,18 @@ ActiveRecord::Schema.define(version: 20160128051154) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+    t.string   "admin"
   end
 
   add_index "tests", ["email"], name: "index_tests_on_email", unique: true
   add_index "tests", ["reset_password_token"], name: "index_tests_on_reset_password_token", unique: true
+
+  create_table "tops", force: true do |t|
+    t.string   "name"
+    t.string   "image"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "user_situations", force: true do |t|
     t.integer  "user_id"
@@ -151,6 +164,7 @@ ActiveRecord::Schema.define(version: 20160128051154) do
     t.datetime "updated_at"
     t.string   "remember_token"
     t.string   "password_digest"
+    t.string   "user"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
