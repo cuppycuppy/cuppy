@@ -10,6 +10,8 @@ class CupsController < ApplicationController
   # GET /cups/1
   # GET /cups/1.json
   def show
+    @cup = Cup.find(params[:id])
+    @recipes = @cup.recipes
   end
 
   # GET /cups/new

@@ -1,5 +1,3 @@
-<p id="notice"><%= notice %></p>
-
 <p>
   <strong>Title:</strong>
   <%= @cup.title %>
@@ -10,5 +8,7 @@
   <%= @cup.user_id %>
 </p>
 
-<%= link_to 'Edit', edit_cup_path(@cup) %> |
-<%= link_to 'Back', cups_path %>
+<p>このCupに入っているrecipeは…</p>
+<% @recipes.each do |recipe| %>
+  <%= recipe.title %>
+<% end %>
