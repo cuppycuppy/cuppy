@@ -35,7 +35,8 @@ gem 'jbuilder', '~> 2.0'
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 gem 'spring',        group: :development
 
-gem 'bcrypt-ruby', '~> 3.1.0', require: 'bcrypt'
+#gem 'bcrypt-ruby', '~> 3.1.0', require: 'bcrypt'
+gem 'bcrypt'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -57,9 +58,9 @@ gem 'will_paginate', '3.0.4'
 gem 'bootstrap-will_paginate', '0.0.9'
 
 #admin関連
-gem 'rails_admin'
-gem 'devise'
-gem 'cancan'
+#gem 'rails_admin'
+#gem 'devise'
+#gem 'cancan'
 gem 'activeadmin', '~> 1.0.0.pre2'
 
 #検索バー
