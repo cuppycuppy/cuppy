@@ -6,6 +6,10 @@ class CookedsController < ApplicationController
     current_user.cooked!(@recipe)
   end
 
+  def index
+    @recipe_photos = RecipePhoto.all
+  end
+  
   def destroy
     @recipe = Recipe.find(params[:id]).recipe
     current_user.uncooked!(@recipe)

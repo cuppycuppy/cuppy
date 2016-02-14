@@ -92,3 +92,10 @@ class UsersController < ApplicationController
       @user = User.find(params[:id])
       redirect_to(root_path) unless current_user?(@user)
     end
+
+  def cooked
+    @title = 'Cooked Recipes'
+    @recipe = current_user.recipes.build
+    @feed_recipes = current_user.cooked_recipes.paginate(page: params[:page])
+    render template: 'about/index'
+  end

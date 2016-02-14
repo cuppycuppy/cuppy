@@ -31,7 +31,7 @@ Cuppy::Application.routes.draw do
   match '/signin',  to: 'sessions#create',         via: 'get'
   match '/signout', to: 'sessions#destroy',     via: 'delete'
 
-  resources :cookeds
+  resources :cookeds, only: [:create, :destroy, :index]
 
   resources :recipe_photos
 
