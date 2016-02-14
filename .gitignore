@@ -16,7 +16,7 @@
 /tmp
 
 .DS_Store
-/vendor/bundle
+# /vendor/bundle
 # /config/database.yml
 # /public/uploads
 # /public/sitemap.xml.gz
