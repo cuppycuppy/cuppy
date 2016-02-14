@@ -58,10 +58,8 @@ gem 'will_paginate', '3.0.4'
 gem 'bootstrap-will_paginate', '0.0.9'
 
 #admin関連
-#gem 'rails_admin'
-#gem 'devise'
-#gem 'cancan'
-gem 'activeadmin', '~> 1.0.0.pre2'
+gem 'devise'
+gem 'activeadmin', github: 'gregbell/active_admin'
 
 #検索バー
 gem 'ransack'
