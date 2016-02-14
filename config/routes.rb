@@ -7,11 +7,9 @@ Cuppy::Application.routes.draw do
   resources :category_situations
 
   resources :categories
-
-  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
-  devise_for :tests
-  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+
   resources :user_situations
 
   resources :recipe_situations
