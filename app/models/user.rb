@@ -7,7 +7,6 @@ class User < ActiveRecord::Base
   has_many :cups
   has_many :cookeds
   has_many :cooked_recipes, through: :cookeds, source: :recipe
-end
 
   def User.new_remember_token
     SecureRandom.urlsafe_base64
@@ -34,3 +33,4 @@ end
   def uncooked!(recipe)
     cookeds.find_by(recipe_id: recipe.id).destroy
   end
+end

@@ -1,4 +1,3 @@
-
 <!-- サイドバー -->
    
       <div class="left">
@@ -12,21 +11,55 @@
      <li class="menulist"><%= link_to "Log out", signout_path,method: :delete %></li>
       </div>
 
-<div class="contents">
-<!--背景画像-->
-    <img src="/assets/login_background.png"  class="lognin_background" />
-<!--レシピ中身-->
-    <div class='login'>
-     <div class='form'>
-      <%= form_for(:session, url: sessions_path) do |f| %>
 
-      <%= f.text_field :email, :placeholder  => "メールアドレス", :class => "custom-field"%>
-      <%= f.password_field :password, :placeholder  => "パスワード", :class => "password-field"%>
-      <% end %>
+<% provide(:title, "Sign in") %>
+<h1>Sign in</h1>
+
+<div class="row">
+  <div class="span6 offset3">
+    <%= form_for(:session, url: sessions_path) do |f| %>
+
+      <%= f.label :email %>
+      <%= f.text_field :email %>
+
+      <%= f.label :password %>
+      <%= f.password_field :password %>
+
+    <% end %>
+
+    <p>
+
+New user? 
+
+<a herf= signup_path>
+
+Sign up now!
+
+</a> 
+</p>
+  </div>
+</div>
+
+
+
+<div class='main'>
+
+<div class='login'>
+
+<form method="get" action="/sessions/new">
+
+     <div id='login-wrapper'><h4 class='userregister'>Sign in</h4></div>
+         <div class='form'>
+             <input type="text" id="customer_ID" name="customer[ID]" required="required" class="custom-field" placeholder="ID" />
+                
+                
+          <input type="password" id="customer_password" name="customer[password]" required="required" class="custom-field" placeholder="パスワード" />
+          <p></p>
      </div>
-     <div class='registerbutton'><%= button_to 'ログイン', recipes_path, :class => "button", :method => :get  %><br /></div>
-     </form>
-    </div>
+      <%= button_to 'Signin', recipes_path, :class => "button", :method => :get  %><br />
+          
+</div>
 
-      <div class='alreadyuser'><a href="/ddk">新規会員登録はこちら</a></div>
+<div class='alreadyuser'><a href="/ddk”>Sign up now!</a></div>
+</html>   
 
