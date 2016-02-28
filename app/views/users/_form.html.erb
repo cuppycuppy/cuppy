@@ -34,16 +34,19 @@
 
 <div class='login'>
   <div id='login-wrapper'><h4 class='userregister'>Sign up</h4></div>
-     <form action="" method="post">
-      <div class='form'>
+     <!-- <form action="" method="post"> -->
+      <!-- <div class='form'> -->
       <%= f.text_field :name, :placeholder  => "ユーザーID"%>
       <%= f.text_field :email, :placeholder  => "メールアドレス"%>
       <%= f.password_field :password, :placeholder  => "パスワード"%>
-    　<% end %>
+    
       </div>
-    <div class='registerbutton'><%= button_to '登録', recipes_path, :class => "button", :method => :get  %><br /></div>
+    <div class='registerbutton'>
+      <%= f.submit '登録', class: "button" %>
+    </div>
     <div class='alreadyuser'><a href="/ddk">すでに会員の方はこちら！</a></div>
-    </form>  
+    <!-- </form>   -->
 </div>
+<% end %>
 
 </div>

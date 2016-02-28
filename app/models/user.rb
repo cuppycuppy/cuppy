@@ -16,6 +16,16 @@ class User < ActiveRecord::Base
     Digest::SHA1.hexdigest(token.to_s)
   end
 
+  def create_default_cups
+      # add_cups: "breakfast", "lunch", "dinner", "dessert"
+      # cup = Cup.new(title: 'breakfast', user: self)
+      # cup.save
+      self.cups.create(title: 'breakfast')
+      self.cups.create(title: 'lunch')
+      self.cups.create(title: 'dinner')
+      self.cups.create(title: 'dessert')
+  end
+
   private
 
     def create_remember_token
@@ -33,4 +43,5 @@ class User < ActiveRecord::Base
   def uncooked!(recipe)
     cookeds.find_by(recipe_id: recipe.id).destroy
   end
+
 end

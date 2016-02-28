@@ -27,7 +27,7 @@ class CupsController < ApplicationController
   # POST /cups.json
   def create
     @cup = Cup.new(cup_params)
-
+    @cup.user_id=current_user.id
     respond_to do |format|
       if @cup.save
         format.html { redirect_to @cup, notice: 'Cup was successfully created.' }
