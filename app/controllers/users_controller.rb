@@ -30,6 +30,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       sign_in @user
+      @user.create_default_cups
       flash[:success] = "Welcome to Cuppy!"
       redirect_to @user
     else
