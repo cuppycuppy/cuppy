@@ -67,6 +67,10 @@ ActiveRecord::Schema.define(version: 20160128051154) do
     t.datetime "updated_at"
   end
 
+  add_index "cookeds", ["recipe_id"], name: "index_cookeds_on_recipe_id"
+  add_index "cookeds", ["user_id", "recipe_id"], name: "index_cookeds_on_user_id_and_recipe_id", unique: true
+  add_index "cookeds", ["user_id"], name: "index_cookeds_on_user_id"
+
   create_table "cup_recipes", force: true do |t|
     t.integer  "cup_id"
     t.integer  "recipe_id"
@@ -117,24 +121,6 @@ ActiveRecord::Schema.define(version: 20160128051154) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-
-  create_table "tests", force: true do |t|
-    t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
-    t.string   "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,  null: false
-    t.datetime "current_sign_in_at"
-    t.datetime "last_sign_in_at"
-    t.string   "current_sign_in_ip"
-    t.string   "last_sign_in_ip"
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
-  end
-
-  add_index "tests", ["email"], name: "index_tests_on_email", unique: true
-  add_index "tests", ["reset_password_token"], name: "index_tests_on_reset_password_token", unique: true
 
   create_table "user_situations", force: true do |t|
     t.integer  "user_id"
