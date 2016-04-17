@@ -11,7 +11,7 @@
 </div>
 
 <div class="right">
-<div class="contents">
+
   <!--背景画像-->
   <div class="background"><img src="/assets/recipe_background02.png" /></div>
   <!-- レシピ中身 -->
@@ -33,7 +33,7 @@
   </ul>
 
   <!--関連シチュエーション背景画像-->
-  <div class="osusume">あなたにおすすめテーマ</div>
+  <div class="osusume">あなたにおすすめテーマ
 
   <!--関連シチュエーション中身-->
   <div class="related_situations">
@@ -42,6 +42,11 @@
     <% end %>
   </div>
 
-</div>
+  <div class="detailURL">
+    <%= link_to '詳しく見る', @recipe.url %>
+  </div>
 
+  </div>
+
+</div>
 
