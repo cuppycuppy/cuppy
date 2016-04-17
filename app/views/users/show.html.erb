@@ -3,7 +3,7 @@
   <%= @user.name %>
 </p>
 
-<h2>My Cups </h2>
+<h2>My Cup(favorites) </h2>
 <% @user.cups.each do |cup| %>
     <div>
         <%= link_to cup.title, cup_path(cup.id) %>
